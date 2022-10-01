@@ -186,7 +186,16 @@ margin-right: 10px;
 to bottom, var(--second-background-color), #424242);
 box-shadow:  0 -10px 10px -5px var(--second-background-color);
   };
-  
+  .last-footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    /* background-color: var(--hover-overlay-color); */
+  }
   
 .catalog-names {
   font-weight: normal;
