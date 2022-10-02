@@ -79,7 +79,14 @@ img {
   width: 100%;
   height: auto;
 }
-
+/* .featured{
+  width: 100%;
+  @media screen and (min-width: 960px) {
+    .featured {
+     height: 50wh;
+    }
+  }
+} */
 .container {
   width: 100%;
   margin-left: auto;
@@ -106,6 +113,11 @@ img {
 @media screen and (min-width: 960px) {
   .container {
     width: 960px;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 0;
+    background-color: red;
   }
 }
 .title{
@@ -164,6 +176,7 @@ width: 100%;
 height: 100%;
  }
 }
+
 .featured-item{
   position: relative;
   display: flex;
@@ -188,6 +201,21 @@ height: 100%;
      margin-bottom: 0;
     } 
    }
+  @media screen and (min-width: 960px) {
+    .featured-item:first-child {
+      width: 500px;
+      height: 500px;
+      margin-right: 20px;
+      /* height: 100%; */
+    }
+    
+    .featured-item:nth-child(n+2) {
+      width: 240px
+    }
+    .featured-item:nth-last-child(-n+2) {
+      display: none;
+    }
+  }
 .featured-link{
   display: block;  
 }
@@ -201,7 +229,7 @@ height: 100%;
   height: 100px;
   background-image: linear-gradient(
   to bottom, var(--primary-background-color), #424242);
-  box-shadow:  0 20px 10px -10px var(--primary-background-color);;
+  box-shadow:  0 -20px 10px -10px var(--primary-background-color);;
   }
 .featured-names {
   font-weight: normal;
@@ -237,6 +265,14 @@ height: 100%;
   }
   .last-item:not(:last-child) {
     margin-right: 20px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .last{
+    margin-right: 20px;
+  }
+  .last-item{
+    width: 240px;
   }
 }
 .last-card{
@@ -302,3 +338,33 @@ width: 100%;
     color: var(--secondary-text-color);
     text-transform: lowercase;
   } 
+
+  @media screen and (max-width: 979px) {
+    .last-banner {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .last-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: normal;
+      font-size: 28px;
+      line-height: 28px;
+      letter-spacing: .01em;
+      text-align: center;
+      color: var(--second-background-color);
+      text-transform: lowercase;
+      width: 240px;
+      /* height:240px; */
+      background-color: var(--primary-background-color);
+    }
+  }
+  @media screen and (min-width: 960px) {
+  .last-wrap{
+display: flex;
+justify-content: center;
+
+  }
+}
