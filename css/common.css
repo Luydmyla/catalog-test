@@ -365,6 +365,7 @@ width: 100%;
   .last-wrap{
 display: flex;
 justify-content: center;
+padding-bottom: 50px;
 
   }
 }
