@@ -63,7 +63,7 @@ function renderFeaturedImageList(items) {
             <div class="featured-card">
               <a href class="featured-link link>">
                 <img
-               src="../../__in/${image}"
+               src="../__in/${image}"
                 alt="${url}"
                 width="280"
                 height="280"
@@ -87,10 +87,10 @@ function renderLastImageList(items) {
               <div class="last-card">
                 <a href class="last-link link>">
                 <img
-               src="../../__in/${image}"
+               src="../__in/${image}"
                 alt="${url}"
-                width="280"
-                height="280"
+                width=100%
+                height=100%
               />
                 </a>
               </div>

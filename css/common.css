@@ -158,7 +158,7 @@ display: flex;
 .featured-card{
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-weight: normal;
   font-size: 29px;
   line-height: 28px;
@@ -229,7 +229,7 @@ height: 100%;
   height: 100px;
   background-image: linear-gradient(
   to bottom, var(--primary-background-color), #424242);
-  box-shadow:  0 -20px 10px -10px var(--primary-background-color);;
+  /* box-shadow:  0 -20px 10px -10px var(--primary-background-color);; */
   }
 .featured-names {
   font-weight: normal;
