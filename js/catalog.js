@@ -64,10 +64,7 @@ function renderFeaturedImageList(items) {
               <a href class="featured-link link>">
                 <img
                src="../../__in/${image}"
-<<<<<<< HEAD
                 alt="${url}"
-=======
->>>>>>> f309e80da6f45b9b1f60803a61ac4e417479769e
                 width="280"
                 height="280"
               />
@@ -90,12 +87,8 @@ function renderLastImageList(items) {
               <div class="last-card">
                 <a href class="last-link link>">
                 <img
-<<<<<<< HEAD
-                src="../__in/${image}"
+               src="../../__in/${image}"
                 alt="${url}"
-=======
-                src=https://github.com/Luydmyla/catalog-test/blob/main/__in/${image}"
->>>>>>> f309e80da6f45b9b1f60803a61ac4e417479769e
                 width="280"
                 height="280"
               />
