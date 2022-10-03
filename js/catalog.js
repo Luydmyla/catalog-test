@@ -80,7 +80,7 @@ function renderLastImageList(items) {
               <div class="last-card">
                 <a href class="last-link link>">
                 <img
-                src="../../__in/${image}"
+                src=https://github.com/Luydmyla/catalog-test/blob/main/__in/${image}"
                 width="280"
                 height="280"
               /> 
