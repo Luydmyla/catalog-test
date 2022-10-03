@@ -3,7 +3,7 @@ const refs = {
   featuredImagesList: document.querySelector(".featured-list"),
 };
 
-fetch("../__in/data.json")
+fetch("../catalog-test/__in/data.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error(response.status);
