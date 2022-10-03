@@ -3,7 +3,7 @@ const refs = {
   featuredImagesList: document.querySelector(".featured-list"),
 };
 
-fetch("../in/data.json")
+fetch("__in/data.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error(response.status);
@@ -65,8 +65,8 @@ function renderFeaturedImageList(items) {
                 <img
                src="../__in/${image}"
                 alt="${url}"
-                width="280"
-                height="280"
+                width="100%"
+                height="100%"
               />
               </a>
             </div>
@@ -89,8 +89,8 @@ function renderLastImageList(items) {
                 <img
                src="../__in/${image}"
                 alt="${url}"
-                width=100%
-                height=100%
+                width="240px"
+                height="240px"
               />
                 </a>
               </div>
