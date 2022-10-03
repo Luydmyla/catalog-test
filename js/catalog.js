@@ -60,15 +60,13 @@ function renderFeaturedImageList(items) {
   const markup = items
     .map(({ id, image, tags, title, url }) => {
       return `<li data-id=${id} class="featured-item">
-            <div class="featured-card">
-              <a href class="featured-link link>">
+            <div class="featured-card">         
                 <img
                src="../__in/${image}"
                 alt="${url}"
                 width="100%"
                 height="100%"
               />
-              </a>
             </div>
             <div class="featured-footer">
               <h3 class="featured-names">${title}</h3>
@@ -85,14 +83,12 @@ function renderLastImageList(items) {
     .map(({ id, image, tags, title, url }) => {
       return `<li data-id=${id} class="last-item">
               <div class="last-card">
-                <a href class="last-link link>">
                 <img
                src="../__in/${image}"
                 alt="${url}"
                 width="240px"
                 height="240px"
-              />
-                </a>
+              />      
               </div>
               <div class="last-footer">
                 <h3 class="last-names">${title}</h3>
