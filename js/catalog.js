@@ -50,14 +50,21 @@ function newImages(items) {
   renderLastImageList(firstNewImages);
   return firstNewImages;
 }
+const allTags = (tags) => {
+  if (tags === null) {
+    return;
+  }
+  return tags.map((tag) => "#" + tag).join(", ");
+};
 function renderFeaturedImageList(items) {
   const markup = items
-    .map(({ id, image, tags, title, url, age, rating }) => {
+    .map(({ id, image, tags, title, url }) => {
       return `<li data-id=${id} class="featured-item">
             <div class="featured-card">
               <a href class="featured-link link>">
                 <img
-               src="../__in/${image}"
+               src="../../__in/${image}"
+                alt="${url}"
                 width="280"
                 height="280"
               />
@@ -65,7 +72,7 @@ function renderFeaturedImageList(items) {
             </div>
             <div class="featured-footer">
               <h3 class="featured-names">${title}</h3>
-              <p class="featured-tags">#${tags}</p>
+              <p class="featured-tags">${allTags(tags)}</p>
             </div>
           </li>`;
     })
@@ -75,20 +82,21 @@ function renderFeaturedImageList(items) {
 
 function renderLastImageList(items) {
   const markup = items
-    .map(({ id, image, tags, title, url, age, rating }) => {
+    .map(({ id, image, tags, title, url }) => {
       return `<li data-id=${id} class="last-item">
               <div class="last-card">
                 <a href class="last-link link>">
                 <img
                 src="../__in/${image}"
+                alt="${url}"
                 width="280"
                 height="280"
-              /> 
+              />
                 </a>
               </div>
               <div class="last-footer">
                 <h3 class="last-names">${title}</h3>
-                <p class="last-tags">#${tags}</p>
+                <p class="last-tags">${allTags(tags)}</p>
               </div>
             </li>`;
     })
