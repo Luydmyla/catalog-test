@@ -2,7 +2,8 @@ const refs = {
   lastImageList: document.querySelector(".last"),
   featuredImagesList: document.querySelector(".featured-list"),
 };
-
+// const allElementsByTeg = document.querySelector("li");
+// console.log(allElementsByTeg);
 fetch("__in/data.json")
   .then((response) => {
     if (!response.ok) {
@@ -15,16 +16,60 @@ fetch("__in/data.json")
     bestRating(data);
     newImages(data);
   })
+  .then(() => {
+    const allElements = document.body.getElementsByTagName("*");
+    console.log(allElements);
+    const countAllElements = allElements.length;
+    console.log(
+      `загальна кількість елементів у DOM-дереві =${countAllElements} `
+    );
+
+    function allElem(collection) {
+      let tags = [];
+      // let tagsLength = [];
+      for (let i = 0; i < collection.length; i++) {
+        // console.log(collection[i].tagName);
+        tags.push(collection[i].tagName);
+        // tagsLength.push(collection[i].tagName.length);
+      }
+      console.log(tags);
+
+      const getTagStats = (acc, tag) => {
+        if (!acc.hasOwnProperty(tag)) {
+          acc[tag] = 0;
+        }
+        acc[tag] += 1;
+        return acc;
+      };
+
+      const countTags = (tags) => tags.reduce(getTagStats, {});
+      const tagCount = countTags(tags);
+      console.log(tagCount);
+
+      let maxTag = 0;
+      for (let i = 0; i < tags.length; i++)
+        if (tags[i].length > maxTag) {
+          maxTag = tags[i];
+          console.log(
+            `найдовша назва тегу - ${maxTag}, кількість символів у назві - ${maxTag.length}`
+          );
+        }
+
+      for (let i = 1; i <= maxTag.length; i++) {
+        const result = tags.filter((tag) => tag.length === i);
+        console.log(result);
+        console.log(
+          `кількість символів у назві тегу-${i} - кількість таких елементів ${result.length}`
+        );
+      }
+    }
+    allElem(allElements);
+  })
   .catch((error) => {
     console.log(error);
   });
 
 function bestRating(items) {
-  //   const imageRating = items
-  //     .map((items) => {
-  //       console.log(items.rating);
-  //       return items;
-  //     })
   const imageRating = [...items].sort((a, b) => {
     return a.rating - b.rating;
   });
@@ -99,3 +144,6 @@ function renderLastImageList(items) {
     .join("");
   refs.lastImageList.innerHTML = markup;
 }
+
+var len = document.querySelector("ul").children.length;
+console.log(len);
