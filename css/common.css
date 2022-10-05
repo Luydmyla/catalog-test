@@ -225,9 +225,13 @@ img {
     background-color: var(--second-background-color);
   
   }
-  
+  /* .button-next .icon{
+    fill: var(--icon-color-second);
+  } */
   .button-next:hover .icon,
-  .button-back:hover .icon {
+  .button-back:hover .icon 
+  .button-next:focus .icon,
+  .button-back:focus .icon{
     fill: var(--icon-color-first);
     /* fill: red; */
   
@@ -313,11 +317,12 @@ height: 100%;
   height: 240px;
   background-color: var(--primary-background-color); 
 }
-.featured-item::before{
+
+/* іконки -зірочки через бефор */
+/* .featured-item::before{
   position: absolute;
   top: 5px;
   left: 5px;
-  /* transform:translateY(-50%); */
   content: "";
   display: inline-block;
   width: 30px;
@@ -325,14 +330,35 @@ height: 100%;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../in/icons/star-regular.svg);
-  color: blue;
   cursor: pointer;
-}
-.featured-item:hover::before {
+} */
+/* .featured-item:hover::before {
   
   background-image: url(../in/icons/star-solid.svg);
+} */
+.button-star{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+    display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  
+  cursor: pointer;
 }
+.button-star .icon{
+  fill: var(--icon-color-first);
+  /* fill: blue; */
+}
+.button-star:hover .icon,
+.button-star:focus .icon {
+  fill: var(--icon-color-second);
+/* fill: blue; */
 
+}
   @media screen and (min-width: 680px) {
     .featured-item:nth-child(even){
      margin-right: 20px;
@@ -364,8 +390,6 @@ height: 100%;
       width: 100%;
       width: 500px;
       height: 500px;
-      /* margin-right: 20px; */
-      /* height: 100%; */
       margin-bottom: 0;
     }
     
@@ -467,26 +491,25 @@ height: 100%;
 width: 100%;
   }
 }
-.last-card::before {
+/* іконки -зірочки через бефор */
+/* .last-card::before {
   position: absolute;
   top: 5px;
   left: 5px;
-  /* transform:translateY(-50%); */
-  content: "";
+    content: "";
   display: inline-block;
   width: 30px;
   height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../in/icons/star-regular.svg);
-  color: blue;
   cursor: pointer;
-}
+} */
 
-.last-card:hover::before {
+/* .last-card:hover::before {
 
   background-image: url(../in/icons/star-solid.svg);
-}
+} */
   .last-footer{
     width: 100%;
     display: flex;

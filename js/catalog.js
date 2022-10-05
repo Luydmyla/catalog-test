@@ -4,7 +4,14 @@ const refs = {
 };
 // const allElementsByTeg = document.querySelector("li");
 // console.log(allElementsByTeg);
+// async function getImages() {
+//   try {
 
+//   } catch (error) {
+
+//   }
+
+// };
 fetch("in/data.json")
   .then((response) => {
     if (!response.ok) {
@@ -115,6 +122,11 @@ function renderFeaturedImageList(items) {
                 width="100%"
                 height="100%"
               />
+              <button type="button" class="button-star">
+            <svg class="icon" width="30" height="30">
+              <use href="in/icons/sprite.svg#icon-star-solid"></use>
+            </svg>
+          </button>
             </div>
             <div class="featured-footer">
               <h3 class="featured-names">${title}</h3>
@@ -136,7 +148,12 @@ function renderLastImageList(items) {
                 alt="${url}"
                 width="240px"
                 height="240px"
-              />      
+              />   
+              <button type="button" class="button-star">
+            <svg class="icon" width="30" height="30">
+              <use href="in/icons/sprite.svg#icon-star-regular"></use>
+            </svg>
+          </button>   
               </div>
               <div class="last-footer">
                 <h3 class="last-names">${title}</h3>
