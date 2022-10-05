@@ -4,7 +4,8 @@ const refs = {
 };
 // const allElementsByTeg = document.querySelector("li");
 // console.log(allElementsByTeg);
-fetch("__in/data.json")
+
+fetch("../__in/data.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error(response.status);
