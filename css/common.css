@@ -135,7 +135,7 @@ img {
 };
 @media screen and (min-width: 980px) {
   .title {
-    text-align:start;
+    text-align: start;
   }
   .featured-wrap {
     width: 100%;
@@ -324,13 +324,13 @@ height: 100%;
   height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(../__in/icons/star-regular.svg);
+  background-image: url(../in/icons/star-regular.svg);
   color: blue;
   cursor: pointer;
 }
 .featured-item:hover::before {
   
-  background-image: url(../__in/icons/star-solid.svg);
+  background-image: url(../in/icons/star-solid.svg);
 }
 
   @media screen and (min-width: 680px) {
@@ -478,14 +478,14 @@ width: 100%;
   height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(../__in/icons/star-regular.svg);
+  background-image: url(../in/icons/star-regular.svg);
   color: blue;
   cursor: pointer;
 }
 
 .last-card:hover::before {
 
-  background-image: url(../__in/icons/star-solid.svg);
+  background-image: url(../in/icons/star-solid.svg);
 }
   .last-footer{
     width: 100%;
