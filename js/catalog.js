@@ -5,7 +5,7 @@ const refs = {
 // const allElementsByTeg = document.querySelector("li");
 // console.log(allElementsByTeg);
 
-fetch("catalog-test/in/data.json")
+fetch("/in/data.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error(response.status);
