@@ -9,7 +9,7 @@ async function getImages() {
   try {
     const response = await fetch("in/data.json");
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.log(error);
@@ -25,7 +25,7 @@ const bestRating = async () => {
     });
     // console.log(imageRating);
     const bastRatinfImages = imageRating.slice(0, 5);
-    console.log(bastRatinfImages);
+    // console.log(bastRatinfImages);
     renderFeaturedImageList(bastRatinfImages);
     // return bastRatinfImages;
   } catch (error) {
@@ -34,15 +34,19 @@ const bestRating = async () => {
 };
 //  ===== найновіші фото =============
 const newImages = async () => {
-  const data = await getImages();
-  const imageAge = [...data].sort((a, b) => {
-    return a.age - b.age;
-  });
-  console.log(imageAge);
-  const firstNewImages = imageAge.slice(0, 2);
-  //   console.log(firstNewImages);
-  renderLastImageList(firstNewImages);
-  return firstNewImages;
+  try {
+    const data = await getImages();
+    const imageAge = [...data].sort((a, b) => {
+      return a.age - b.age;
+    });
+    // console.log(imageAge);
+    const firstNewImages = imageAge.slice(0, 2);
+    //   console.log(firstNewImages);
+    renderLastImageList(firstNewImages);
+    return firstNewImages;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const allTags = (tags) => {

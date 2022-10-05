@@ -19,22 +19,13 @@ html {
   --second-background-color: rgba(0, 0, 0, 0.13);
   --icon-color-first: #616161;
   --icon-color-second: #bdbdbd;
-  --hover-overlay-color: rgba(33, 150, 243, 0.2);
+  /* --hover-overlay-color: rgba(33, 150, 243, 0.2);
   --transition-duration: 250ms;
-  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
   --placeholder-text: rgba(117, 117, 117, 0.5);
 
 }
- /* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
-  color: #212121;
-  line-height: 1.5;
-} */
+ 
 
 body {
   font-family: "Roboto", sans-serif;
@@ -77,16 +68,7 @@ ul {
 img {
   display: block;
   width: 100%;
-  /* height: auto; */
-  /* height: 100%; */
 }
-
-/* .container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-} */
 
 @media screen and (min-width: 280px) {
   .container {
@@ -94,7 +76,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    background-color: rgb(228, 197, 235);
+    /* background-color: rgb(228, 197, 235); */
   }
 }
 
@@ -113,13 +95,19 @@ img {
     position: relative;
     width: 960px;
     padding-top: 30px;
-    padding-left: 110px;
-    padding-right: 110px;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-bottom: 0;
-    background-color: rgb(228, 197, 235);
+    background-color: var(--background-color);
+    /* background-image: url(/in/images/1646882054_52-kartinkin-net-p-cherno-belie-kartinki-kosmos-55.jpg); */
+    /* background-image: url(/in/images/background-image.png); */
+    /* background-size: contain; */
+      /* background-position: center; */
+      /* background-repeat: repeat; */
+    
   }
 }
-
+@media screen and (min-width: 280px) {
 .title {
       font-weight: bold;
       font-size: 24px;
@@ -132,7 +120,9 @@ img {
       margin-bottom: 20px;
       padding-left: 3px;
       padding-right: 3px;
-};
+}
+}
+
 @media screen and (min-width: 980px) {
   .title {
     text-align: start;
@@ -573,11 +563,17 @@ width: 100%;
       line-height: 28px;
       letter-spacing: .01em;
       text-align: center;
-      color: var(--second-background-color);
+     
+      color: var(--icon-color-second);
+      /* color: var(--second-background-color); */
       text-transform: lowercase;
       width: 240px;
       /* height:240px; */
       background-color: var(--primary-background-color);
+      background-image: url(/in/images/1646882054_52-kartinkin-net-p-cherno-belie-kartinki-kosmos-55.jpg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: repeat;
     }
   }
 
@@ -591,13 +587,15 @@ padding-bottom: 0px;
 
 .footer-text{
 display: flex;
+flex-direction: column;
 text-align: center;
 justify-content: center;
-font-weight: 700;
-font-size: 14px;
-line-height: 1.8571428571;
+font-weight: 400;
+font-size: 10px;
+line-height: 1.5;
 letter-spacing: .02em;
-color:var(--third-text-color);
+color:var(--icon-color-second);
+padding: 0;
 /* padding-top: 10px;
 padding-bottom: 20px; */
 margin-left: auto;
@@ -605,6 +603,8 @@ margin-right: auto;
 }
     
 .footer-line{
+  display: flex;
+  flex-direction: column;
       width: 100%;
-      border-top: 1px solid var(--primary-background-color);
+      border-top: 1px solid var(--second-background-color);
 }

@@ -45,7 +45,7 @@ const tagsCount = () => {
   const tags = allElem();
   return tags.reduce(getTagStats, {});
 };
-tagsCount();
+// tagsCount();
 console.log("назва тегу та їх кількість :", tagsCount());
 
 // ====================   3   =======================
