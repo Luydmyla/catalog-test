@@ -1,121 +1,64 @@
+"use strict";
+
 const refs = {
   lastImageList: document.querySelector(".last"),
   featuredImagesList: document.querySelector(".featured-list"),
 };
-// const allElementsByTeg = document.querySelector("li");
-// console.log(allElementsByTeg);
-// async function getImages() {
-//   try {
 
-//   } catch (error) {
-
-//   }
-
-// };
-fetch("in/data.json")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-    return response.json();
-  })
-  .then((data) => {
+async function getImages() {
+  try {
+    const response = await fetch("in/data.json");
+    const data = await response.json();
     console.log(data);
-    bestRating(data);
-    newImages(data);
-  })
-  .then(() => {
-    const allElements = document.getElementsByTagName("*");
-    // console.log(allElements);
-    const countAllElements = allElements.length;
-    console.log(
-      `загальна кількість елементів у DOM-дереві = ${countAllElements} `
-    );
-
-    function allElem(collection) {
-      let tags = [];
-      // let tagsLength = [];
-      for (let i = 0; i < collection.length; i++) {
-        // console.log(collection[i].tagName);
-        tags.push(collection[i].tagName);
-        // tagsLength.push(collection[i].tagName.length);
-      }
-      console.log(tags);
-
-      let maxTag = "";
-      let maxTagLength = 0;
-      for (let i = 0; i < tags.length; i++) {
-        if (tags[i].length > maxTagLength) {
-          maxTagLength = tags[i].length;
-          maxTag = tags[i];
-        }
-      }
-      console.log(
-        `найдовша назва тегу ${maxTag}, кількість символів у назві - ${maxTagLength}`
-      );
-
-      const getTagStats = (acc, tag) => {
-        if (!acc.hasOwnProperty(tag)) {
-          acc[tag] = 0;
-        }
-        acc[tag] += 1;
-        return acc;
-      };
-
-      const countTags = (tags) => tags.reduce(getTagStats, {});
-      const tagCount = countTags(tags);
-      console.log(tagCount);
-      for (let i = 1; i <= maxTagLength; i++) {
-        const result = tags.filter((tag) => tag.length === i);
-        console.log(
-          `кількість символів у назві тегу - ${i}, кількість таких елементів = ${result.length}`
-        );
-        console.log(result);
-      }
-    }
-    allElem(allElements);
-  })
-  .catch((error) => {
+    return data;
+  } catch (error) {
     console.log(error);
-  });
-
-function bestRating(items) {
-  const imageRating = [...items].sort((a, b) => {
-    return a.rating - b.rating;
-  });
-  // console.log(imageRating);
-  const bastRatinfImages = imageRating.slice(0, 5);
-  //   console.log(bastRatinfImages);
-  renderFeaturedImageList(bastRatinfImages);
-  return bastRatinfImages;
+  }
 }
-
-function newImages(items) {
-  //   const imageAge = items
-  // .map((items) => {
-  //   console.log(items.age);
-  //   return items;
-  // })
-  const imageAge = [...items].sort((a, b) => {
+// ===== кращий рейтинг =============
+const bestRating = async () => {
+  try {
+    const data = await getImages();
+    // console.log(data);
+    const imageRating = [...data].sort((a, b) => {
+      return a.rating - b.rating;
+    });
+    // console.log(imageRating);
+    const bastRatinfImages = imageRating.slice(0, 5);
+    console.log(bastRatinfImages);
+    renderFeaturedImageList(bastRatinfImages);
+    // return bastRatinfImages;
+  } catch (error) {
+    console.log(error);
+  }
+};
+//  ===== найновіші фото =============
+const newImages = async () => {
+  const data = await getImages();
+  const imageAge = [...data].sort((a, b) => {
     return a.age - b.age;
   });
-  //   console.log(imageAge);
+  console.log(imageAge);
   const firstNewImages = imageAge.slice(0, 2);
   //   console.log(firstNewImages);
   renderLastImageList(firstNewImages);
   return firstNewImages;
-}
+};
+
 const allTags = (tags) => {
   if (tags === null) {
     return;
   }
   return tags.map((tag) => "#" + tag).join(", ");
 };
+
+// ========= рендер елементів ==============
+
 function renderFeaturedImageList(items) {
   const markup = items
     .map(({ id, image, tags, title, url }) => {
       return `<li data-id=${id} class="featured-item">
-            <div class="featured-card">         
+            <div class="featured-card">
                 <img
                src="in/${image}"
                 alt="${url}"
@@ -148,12 +91,12 @@ function renderLastImageList(items) {
                 alt="${url}"
                 width="240px"
                 height="240px"
-              />   
+              />
               <button type="button" class="button-star">
             <svg class="icon" width="30" height="30">
               <use href="in/icons/sprite.svg#icon-star-regular"></use>
             </svg>
-          </button>   
+          </button>
               </div>
               <div class="last-footer">
                 <h3 class="last-names">${title}</h3>
@@ -164,3 +107,6 @@ function renderLastImageList(items) {
     .join("");
   refs.lastImageList.innerHTML = markup;
 }
+
+bestRating();
+newImages();
