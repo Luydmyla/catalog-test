@@ -110,7 +110,7 @@ function renderFeaturedImageList(items) {
       return `<li data-id=${id} class="featured-item">
             <div class="featured-card">         
                 <img
-               src="../__in/${image}"
+               src="in/${image}"
                 alt="${url}"
                 width="100%"
                 height="100%"
@@ -132,7 +132,7 @@ function renderLastImageList(items) {
       return `<li data-id=${id} class="last-item">
               <div class="last-card">
                 <img
-               src="../__in/${image}"
+               src="in/${image}"
                 alt="${url}"
                 width="240px"
                 height="240px"
