@@ -61,7 +61,7 @@ const allTags = (tags) => {
 function renderFeaturedImageList(items) {
   const markup = items
     .map(({ id, image, tags, title, url }) => {
-      return `<li data-id=${id} class="featured-item">
+      return `<li data-id="${id}" class="featured-item">
             <div class="featured-card">
                 <img
                src="in/${image}"
@@ -88,7 +88,7 @@ function renderFeaturedImageList(items) {
 function renderLastImageList(items) {
   const markup = items
     .map(({ id, image, tags, title, url }) => {
-      return `<li data-id=${id} class="last-item">
+      return `<li data-id="${id}" class="last-item">
               <div class="last-card">
                 <img
                src="in/${image}"

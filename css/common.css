@@ -19,11 +19,6 @@ html {
   --second-background-color: rgba(0, 0, 0, 0.13);
   --icon-color-first: #616161;
   --icon-color-second: #bdbdbd;
-  /* --hover-overlay-color: rgba(33, 150, 243, 0.2);
-  --transition-duration: 250ms;
-  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
-  --placeholder-text: rgba(117, 117, 117, 0.5);
-
 }
  
 
@@ -76,7 +71,6 @@ img {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    /* background-color: rgb(228, 197, 235); */
   }
 }
 
@@ -98,15 +92,10 @@ img {
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 0;
-    background-color: var(--background-color);
-    /* background-image: url(/in/images/1646882054_52-kartinkin-net-p-cherno-belie-kartinki-kosmos-55.jpg); */
-    /* background-image: url(/in/images/background-image.png); */
-    /* background-size: contain; */
-      /* background-position: center; */
-      /* background-repeat: repeat; */
-    
+    background-color: var(--background-color); 
   }
 }
+
 @media screen and (min-width: 280px) {
 .title {
       font-weight: bold;
@@ -132,26 +121,21 @@ img {
   }
 }
 
-
-    .icon{
-      /* width:30px ;
-      height:60px ; */
+  .icon{
      fill: var(--icon-color-second);
     }
+
 @media screen and (min-width: 280px) {
   .button-back,.button-next {
     display: none;
   }
-.featured-list{
+  .featured-list{
   display: flex;
   flex-direction: column;
-}}
+}
+}
 
 @media screen and (min-width: 680px) {
-  /* .featured-wrap {
-    width: 100%;
-  
-  } */
   .button-back,
   .button-next {
     display: none;
@@ -164,7 +148,6 @@ img {
     justify-content: center;
     align-items: center;
     width: 100%;
-
   }
 }
 
@@ -173,17 +156,10 @@ img {
     position: absolute;
     top: 50%;
     left: 0px;
-    /* transform:translateY(-50%); */
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
-    /* width: 40px;
-  height: 80px; */
-    /* background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(/__in/icons/back.svg); */
     background-color: var(---primary-background-color);
     border: none;
     cursor: pointer;
@@ -193,18 +169,10 @@ img {
     position: absolute;
     top: 50%;
     right: 0px;
-    /* transform:translateY(-50%); */
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
-  
-    /* width: 40px;
-        height: 80px; */
-    /* background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url(/__in/icons/next.svg); */
     background-color: var(---primary-background-color);
     border: none;
     cursor: pointer;
@@ -213,19 +181,15 @@ img {
   .button-next:hover,
   .button-back:hover {
     background-color: var(--second-background-color);
-  
   }
-  /* .button-next .icon{
-    fill: var(--icon-color-second);
-  } */
+  
   .button-next:hover .icon,
   .button-back:hover .icon 
   .button-next:focus .icon,
   .button-back:focus .icon{
     fill: var(--icon-color-first);
-    /* fill: red; */
-  
   }
+
   .featured-list {
     position: relative;
    display: grid;
@@ -233,54 +197,12 @@ img {
     height: 500px;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-      /* display: flex; */
     }
-    /* .featured-list::before {
-      position: absolute;
-      top: 50%;
-      left: -70px;
-      transform:translateY(-50%);
-      content: "";
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(../__in/icons/back.svg);
-      color: var(--icon-color-second);
-      cursor: pointer;
-    }
-    .featured-list:hover::before{
-color:var(--icon-color-first);
-background-color: var(--second-background-color);
-
-    } */
-    /* .featured-list::after{
-      position: absolute;
-      top: 50%;
-      right: -70px;
-      transform:translateY(-50%);
-      content: "";
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(../__in/icons/next.svg);
-      color: var(--icon-color-second);
-      cursor: pointer;
-    }
-    .featured-list:hover::after
-     {
-      color: var(--icon-color-first);
-      background-color: var(--second-background-color);
-    } */
 }
 
 .featured-card{
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   font-weight: normal;
   font-size: 29px;
   line-height: 28px;
@@ -330,13 +252,12 @@ height: 100%;
   position: absolute;
   top: 5px;
   left: 5px;
-    display: flex;
+  display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   background-color: transparent;
   border: none;
-  
   cursor: pointer;
 }
 .button-star .icon{
@@ -347,14 +268,12 @@ height: 100%;
 .button-star:focus .icon {
   fill: var(--icon-color-second);
 /* fill: blue; */
-
 }
   @media screen and (min-width: 680px) {
     .featured-item:nth-child(even){
      margin-right: 20px;
     }
     .featured-item:first-child{
-     
     width: 100%;
     height: 500px;
     /* height: 100%; */
@@ -393,7 +312,6 @@ height: 100%;
       display: none;
     }
   }
-
 /* .featured-link{
   display: block;  
 } */
@@ -478,7 +396,7 @@ height: 100%;
 
 @media screen and (min-width: 680px) {
   .last-card{
-width: 100%;
+     width: 100%;
   }
 }
 /* іконки -зірочки через бефор */
@@ -497,9 +415,9 @@ width: 100%;
 } */
 
 /* .last-card:hover::before {
-
   background-image: url(../in/icons/star-solid.svg);
 } */
+
   .last-footer{
     width: 100%;
     display: flex;
@@ -510,23 +428,6 @@ width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  /* @media screen and (min-width: 680px) {
-    .last-footer {
-      width: 100%;
-      display: flex;
-      
-    }
-  } */
-   /* @media screen and (min-width: 960px) {
-      .last-footer {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        height: 80px;
-      }
-    }; */
-
   .last-names{
     font-weight: bold;
     font-size: 14px;
@@ -563,48 +464,44 @@ width: 100%;
       line-height: 28px;
       letter-spacing: .01em;
       text-align: center;
-     
       color: var(--icon-color-second);
-      /* color: var(--second-background-color); */
       text-transform: lowercase;
       width: 240px;
-      /* height:240px; */
       background-color: var(--primary-background-color);
       background-image: url(/in/images/1646882054_52-kartinkin-net-p-cherno-belie-kartinki-kosmos-55.jpg);
       background-size: contain;
       background-position: center;
       background-repeat: repeat;
+      cursor: pointer;
     }
   }
 
   @media screen and (min-width: 960px) {
   .last-wrap{
-display: flex;
-justify-content: center;
-padding-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0px;
   }
-}
+  }
 
-.footer-text{
-display: flex;
-flex-direction: column;
-text-align: center;
-justify-content: center;
-font-weight: 400;
-font-size: 10px;
-line-height: 1.5;
-letter-spacing: .02em;
-color:var(--icon-color-second);
-padding: 0;
-/* padding-top: 10px;
-padding-bottom: 20px; */
-margin-left: auto;
-margin-right: auto;
-}
+  .footer-text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: .02em;
+    color:var(--icon-color-second);
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    }
     
 .footer-line{
-  display: flex;
-  flex-direction: column;
-      width: 100%;
-      border-top: 1px solid var(--second-background-color);
-}
+    display: flex;
+    flex-direction: column;
+        width: 100%;
+        border-top: 1px solid var(--second-background-color);
+  }

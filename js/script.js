@@ -2,7 +2,7 @@
 
 // ====================  1   =======================
 const countAllElements = document.getElementsByTagName("*").length;
-console.log(`загальна кількість елементів у DOM-дереві - ${countAllElements} `);
+console.log(`Загальна кількість елементів у DOM-дереві - ${countAllElements} `);
 
 // ====================   2   =======================
 const allElem = () => {
@@ -28,25 +28,22 @@ function maxTag() {
     }
   }
   console.log(
-    `найдовша назва тегу ${maxTag}, кількість символів у назві - ${maxTagLength}`
+    `Найдовша назва тегу ${maxTag}, кількість символів у назві - ${maxTagLength}`
   );
   return maxTagLength;
 }
 maxTag();
 
-const getTagStats = (acc, tag) => {
-  if (!acc.hasOwnProperty(tag)) {
-    acc[tag] = 0;
-  }
-  acc[tag] += 1;
-  return acc;
-};
 const tagsCount = () => {
-  const tags = allElem();
-  return tags.reduce(getTagStats, {});
+  return allElem().reduce((acc, tag) => {
+    if (!acc.hasOwnProperty(tag)) {
+      acc[tag] = 0;
+    }
+    acc[tag] += 1;
+    return acc;
+  }, {});
 };
-// tagsCount();
-console.log("назва тегу та їх кількість :", tagsCount());
+console.log("Назви тегів та їх кількість :", tagsCount());
 
 // ====================   3   =======================
 const countTagsSymbol = () => {
@@ -55,7 +52,7 @@ const countTagsSymbol = () => {
   for (let i = 1; i <= maxTagLength; i++) {
     const result = tags.filter((tag) => tag.length === i);
     console.log(
-      `кількість символів у назві тегу - ${i}, кількість таких елементів = ${result.length}`
+      `Кількість символів у назві тегу - ${i}, кількість таких елементів = ${result.length}`
     );
     console.log(result);
   }
