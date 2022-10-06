@@ -15,6 +15,8 @@ async function getImages() {
     console.log(error);
   }
 }
+// const getImages = async () => fetch("in/data.json").then((res) => res.json());
+
 // ===== кращий рейтинг =============
 const bestRating = async () => {
   try {
