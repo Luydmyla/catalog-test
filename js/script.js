@@ -13,7 +13,6 @@ const allElem = () => {
     tags.push(el.tagName);
     tagsLength.push(el.tagName.length);
   }
-  //   console.log(tags);
   return tags;
 };
 
@@ -44,6 +43,9 @@ const tagsCount = () => {
   }, {});
 };
 console.log("Назви тегів та їх кількість :", tagsCount());
+// var newSet = new Set(allElem());
+// console.log(newSet);
+// console.log([...newSet]);
 
 // ====================   3   =======================
 const countTagsSymbol = () => {

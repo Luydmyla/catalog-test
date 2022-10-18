@@ -21,15 +21,11 @@ async function getImages() {
 const bestRating = async () => {
   try {
     const data = await getImages();
-    // console.log(data);
     const imageRating = [...data].sort((a, b) => {
       return a.rating - b.rating;
     });
-    // console.log(imageRating);
     const bastRatinfImages = imageRating.slice(0, 5);
-    // console.log(bastRatinfImages);
     renderFeaturedImageList(bastRatinfImages);
-    // return bastRatinfImages;
   } catch (error) {
     console.log(error);
   }
@@ -41,9 +37,7 @@ const newImages = async () => {
     const imageAge = [...data].sort((a, b) => {
       return a.age - b.age;
     });
-    // console.log(imageAge);
     const firstNewImages = imageAge.slice(0, 2);
-    //   console.log(firstNewImages);
     renderLastImageList(firstNewImages);
     return firstNewImages;
   } catch (error) {
